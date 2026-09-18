@@ -16,16 +16,16 @@
       color-scheme: light only;
       --sand: #fff8ef;
       --sand-2: #ffe8c8;
-      --card: rgba(255, 255, 255, 0.9);
+      --card: rgba(255,255,255,0.92);
       --ink: #1c2a3a;
       --muted: #5b6b7c;
       --coral: #ff6b4a;
-      --line: rgba(28, 42, 58, 0.1);
-      --shadow: 0 12px 40px rgba(30, 80, 120, 0.12);
+      --line: rgba(28,42,58,0.1);
+      --shadow: 0 10px 28px rgba(30,80,120,0.1);
     }
     @media (prefers-color-scheme: dark) {
       :root { color-scheme: light only; }
-      body { background: linear-gradient(180deg, #e8f6ff 0%, #fff8ef 42%, #ffe8c8 100%) !important; color: #1c2a3a !important; }
+      body { background: linear-gradient(180deg,#e8f6ff 0%,#fff8ef 45%,#ffe8c8 100%) !important; color:#1c2a3a !important; }
     }
     * { box-sizing: border-box; }
     body {
@@ -36,138 +36,156 @@
         radial-gradient(700px 420px at -5% 20%, #b8e4ff 0%, transparent 50%),
         linear-gradient(180deg, #e8f6ff 0%, var(--sand) 42%, var(--sand-2) 100%);
     }
-    .wrap { max-width: 860px; margin: 0 auto; padding: 1.4rem 1rem 3rem; position: relative; z-index: 1; }
-    header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.1rem; }
-    .brand .car { font-family: "Space Grotesk", sans-serif; font-size: 2.6rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 1rem 0.85rem 2.5rem; position: relative; z-index: 1; }
+    header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.85rem; }
+    .brand .car { font-family: "Space Grotesk", sans-serif; font-size: 2.2rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
     .brand .team {
-      margin-top: 0.25rem; font-weight: 700; font-size: 1.05rem;
+      margin-top: 0.2rem; font-weight: 700; font-size: 0.98rem;
       background: linear-gradient(90deg, var(--coral), #ff9f43);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    .brand .event { margin-top: 0.3rem; color: var(--muted); font-size: 0.9rem; }
-    .badge-row { display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem; }
+    .brand .event { margin-top: 0.2rem; color: var(--muted); font-size: 0.82rem; }
+    .badge-row { display: flex; flex-direction: column; align-items: flex-end; gap: 0.35rem; }
     .live, .edition {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.35rem 0.75rem; border-radius: 999px;
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
-      backdrop-filter: blur(8px);
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.28rem 0.65rem; border-radius: 999px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
     }
     .live { background: rgba(255,107,74,0.14); color: #d94826; border: 1px solid rgba(255,107,74,0.35); }
     .live i {
-      width: 0.48rem; height: 0.48rem; border-radius: 50%; background: var(--coral);
-      box-shadow: 0 0 0 4px rgba(255,107,74,0.2); animation: pulse 1.4s infinite;
+      width: 0.42rem; height: 0.42rem; border-radius: 50%; background: var(--coral);
+      box-shadow: 0 0 0 3px rgba(255,107,74,0.2); animation: pulse 1.4s infinite;
     }
     .edition { background: rgba(245,185,66,0.28); color: #9a6b00; border: 1px solid rgba(245,185,66,0.5); }
     @keyframes pulse { 50% { opacity: 0.4; } }
 
-    .stack { display: flex; flex-direction: column; gap: 0.8rem; }
+    .stack { display: flex; flex-direction: column; gap: 0.7rem; }
     .card {
-      background: var(--card); border: 1px solid var(--line); border-radius: 1.15rem;
-      padding: 1rem 1.1rem; box-shadow: var(--shadow); backdrop-filter: blur(10px);
+      background: var(--card); border: 1px solid var(--line); border-radius: 1rem;
+      padding: 0.85rem 0.9rem; box-shadow: var(--shadow);
     }
 
-    /* Merged: live numbers LEFT + race updates RIGHT */
     .card.dashboard {
       display: grid;
-      grid-template-columns: minmax(240px, 0.95fr) minmax(280px, 1.15fr);
-      gap: 1rem;
-      align-items: start;
-      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,248,239,0.92));
+      grid-template-columns: 1.05fr 1fr;
+      gap: 0.85rem;
+      align-items: stretch;
+      background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(255,248,239,0.93));
     }
-    @media (max-width: 720px) {
-      .card.dashboard { grid-template-columns: 1fr; }
-      .brand .car { font-size: 2.1rem; }
-    }
-    .dash-left { display: flex; flex-direction: column; gap: 0.85rem; }
+    @media (max-width: 740px) { .card.dashboard { grid-template-columns: 1fr; } }
+
+    .dash-left { display: flex; flex-direction: column; gap: 0.55rem; }
+
+    /* Always 3 columns — never stack vertically */
     .hero-row {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1.1fr;
+      gap: 0.4rem;
+      padding: 0.55rem 0.6rem;
+      border-radius: 0.85rem;
+      background: rgba(255,255,255,0.65);
+      border: 1px solid var(--line);
     }
-    @media (max-width: 520px) { .hero-row { grid-template-columns: 1fr; } }
+    .hero-row > div { min-width: 0; }
+    .hero-row .value { font-size: 1.35rem; }
+    .hero-row .value.sm { font-size: 1rem; }
+    .hero-row .sub { font-size: 0.72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
     .metrics {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
     }
     .metric {
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.7);
       border: 1px solid var(--line);
-      border-radius: 0.9rem;
-      padding: 0.7rem 0.8rem;
+      border-radius: 0.75rem;
+      padding: 0.5rem 0.6rem;
     }
+    .metric .value { font-size: 1.2rem; }
+    .metric .value.tiny {
+      font-size: 0.78rem; line-height: 1.25; font-weight: 700;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .metric .sub { font-size: 0.7rem; }
+
     .dash-right {
       border-left: 1px solid var(--line);
-      padding-left: 1rem;
-      min-height: 100%;
+      padding-left: 0.85rem;
+      display: flex; flex-direction: column; min-height: 0;
     }
-    @media (max-width: 720px) {
-      .dash-right { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 0.85rem; }
+    @media (max-width: 740px) {
+      .dash-right { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 0.7rem; }
     }
-    .dash-right .label { margin-bottom: 0.5rem; }
+    .dash-right .label { margin-bottom: 0.4rem; }
     .note {
-      padding: 0.8rem 0.9rem; border-radius: 0.9rem;
-      border: 1.5px dashed rgba(59,167,224,0.6); background: rgba(59,167,224,0.12);
-      font-size: 0.92rem; font-weight: 600; line-height: 1.4; color: var(--ink);
+      padding: 0.55rem 0.7rem; border-radius: 0.7rem;
+      border: 1.5px dashed rgba(59,167,224,0.55); background: rgba(59,167,224,0.1);
+      font-size: 0.82rem; font-weight: 600; line-height: 1.35; color: var(--ink);
     }
-    .history { list-style: none; padding: 0; margin: 0.3rem 0 0; max-height: 280px; overflow: auto; }
+    .history {
+      list-style: none; padding: 0; margin: 0.25rem 0 0;
+      max-height: 220px; overflow: auto;
+    }
     .history li {
-      font-size: 0.82rem; color: var(--muted); padding: 0.55rem 0;
-      border-bottom: 1px solid var(--line); line-height: 1.35;
+      font-size: 0.75rem; color: var(--muted); padding: 0.42rem 0;
+      border-bottom: 1px solid var(--line); line-height: 1.3;
     }
     .history li:first-child { color: var(--ink); font-weight: 600; }
     .history li:last-child { border-bottom: 0; }
 
     .card.neighbors {
-      display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: stretch;
-      padding: 0.85rem;
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.55rem; align-items: stretch;
+      padding: 0.7rem;
       background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(232,246,255,0.92));
-      border: 2px solid rgba(59,167,224,0.35);
+      border: 2px solid rgba(59,167,224,0.3);
     }
-    @media (max-width: 560px) { .card.neighbors { grid-template-columns: 1fr; } .us-chip { order: -1; } }
+    @media (max-width: 560px) { .card.neighbors { grid-template-columns: 1fr; } .us-chip { order: -1; justify-self: start; } }
     .nb {
-      border-radius: 1rem; padding: 0.9rem 1rem;
+      border-radius: 0.85rem; padding: 0.65rem 0.75rem;
       border: 1px solid var(--line); background: rgba(255,255,255,0.85);
     }
     .nb.ahead { border-color: rgba(43,182,115,0.35); background: rgba(43,182,115,0.1); }
     .nb.behind { border-color: rgba(255,107,74,0.35); background: rgba(255,107,74,0.1); }
     .nb .dir {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
-      color: var(--muted); margin-bottom: 0.25rem;
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--muted); margin-bottom: 0.15rem;
     }
     .nb.ahead .dir { color: #187a4a; }
     .nb.behind .dir { color: #c2410c; }
-    .nb .who { font-weight: 700; font-size: 1rem; }
+    .nb .who { font-weight: 700; font-size: 0.9rem; }
     .nb .gap {
       font-family: "Space Grotesk", sans-serif;
-      font-size: 1.85rem; font-weight: 700; margin-top: 0.35rem; line-height: 1;
+      font-size: 1.55rem; font-weight: 700; margin-top: 0.2rem; line-height: 1;
     }
     .nb.ahead .gap { color: #187a4a; }
     .nb.behind .gap { color: #c2410c; }
-    .nb .gap-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; font-weight: 600; }
+    .nb .gap-label { font-size: 0.68rem; color: var(--muted); margin-top: 0.15rem; font-weight: 600; }
     .us-chip {
       align-self: center; justify-self: center; text-align: center;
-      padding: 0.65rem 0.85rem; border-radius: 999px;
+      padding: 0.5rem 0.7rem; border-radius: 999px;
       background: linear-gradient(135deg, #ff6b4a, #ff9f43); color: white;
-      font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 0.95rem;
-      box-shadow: 0 8px 20px rgba(255,107,74,0.28); min-width: 4.5rem;
+      font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 0.88rem;
+      box-shadow: 0 6px 16px rgba(255,107,74,0.25); min-width: 3.8rem;
     }
-    .us-chip small { display: block; font-size: 0.65rem; opacity: 0.9; font-weight: 600; letter-spacing: 0.04em; }
-    .label { color: var(--muted); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; }
-    .value { font-family: "Space Grotesk", sans-serif; font-size: 1.55rem; font-weight: 700; margin-top: 0.12rem; }
-    .value.sm { font-size: 1.05rem; }
-    .value.tiny { font-size: 0.95rem; line-height: 1.25; }
-    .sub { color: var(--muted); font-size: 0.8rem; margin-top: 0.15rem; }
+    .us-chip small { display: block; font-size: 0.6rem; opacity: 0.9; font-weight: 600; letter-spacing: 0.04em; }
+
+    .label { color: var(--muted); font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    .value { font-family: "Space Grotesk", sans-serif; font-weight: 700; margin-top: 0.05rem; line-height: 1.1; }
+    .sub { color: var(--muted); margin-top: 0.1rem; }
     .status-pill {
-      display: inline-block; margin-top: 0.3rem; padding: 0.22rem 0.55rem;
-      border-radius: 999px; font-size: 0.75rem; font-weight: 700;
+      display: inline-block; margin-top: 0.15rem; padding: 0.12rem 0.45rem;
+      border-radius: 999px; font-size: 0.65rem; font-weight: 700;
     }
     .on_track, .outlap { background: rgba(43,182,115,0.16); color: #187a4a; }
     .in_pit, .pit { background: rgba(245,185,66,0.22); color: #9a6b00; }
     .retired { background: rgba(255,107,74,0.18); color: #c2410c; }
-    footer { margin-top: 1.3rem; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+    footer { margin-top: 1rem; color: var(--muted); font-size: 0.75rem; line-height: 1.45; }
     footer a { color: #1e7eb8; font-weight: 600; }
-    .err { color: #ff6b4a; padding: 1rem; }
     .sun {
-      position: fixed; top: -40px; right: -30px; width: 160px; height: 160px; border-radius: 50%;
+      position: fixed; top: -40px; right: -30px; width: 140px; height: 140px; border-radius: 50%;
       background: radial-gradient(circle at 35% 35%, #fff3c4, #f5b942 45%, transparent 70%);
-      opacity: 0.55; pointer-events: none; z-index: 0;
+      opacity: 0.5; pointer-events: none; z-index: 0;
     }
   </style>
 </head>
@@ -191,14 +209,14 @@
         <div class="dash-left">
           <div class="hero-row">
             <div>
-              <div class="label">Posição geral</div>
+              <div class="label">Posição</div>
               <div class="value" id="overall">—</div>
               <div class="sub" id="classLine">—</div>
             </div>
             <div>
               <div class="label">Estado</div>
               <div class="value sm" id="statusValue">—</div>
-              <span class="status-pill on_track" id="statusPill">—</span>
+              <span class="status-pill on_track" id="statusPill" hidden></span>
             </div>
             <div>
               <div class="label">Atualizado</div>
@@ -242,14 +260,14 @@
           <div class="dir">↑ À frente</div>
           <div class="who" id="aheadWho">—</div>
           <div class="gap" id="aheadGap">—</div>
-          <div class="gap-label">gap / distância</div>
+          <div class="gap-label">gap</div>
         </div>
         <div class="us-chip">#58<small id="usPos">TU</small></div>
         <div class="nb behind" id="behindBox">
           <div class="dir">↓ Atrás</div>
           <div class="who" id="behindWho">—</div>
           <div class="gap" id="behindGap">—</div>
-          <div class="gap-label">gap / distância</div>
+          <div class="gap-label">gap</div>
         </div>
       </div>
     </div>
@@ -257,7 +275,7 @@
     <footer>
       Summer light always on · atualiza ~1 min ·
       <a href="https://github.com/MrJazzMan/moz-58-status" target="_blank" rel="noopener">código</a>
-      · partilha:
+      ·
       <a href="https://htmlpreview.github.io/?https://github.com/MrJazzMan/moz-58-status/blob/main/index.html" target="_blank" rel="noopener">abrir página</a>
     </footer>
   </div>
@@ -307,23 +325,24 @@
       document.getElementById('updated').textContent = d.updatedLabel || '—';
       document.getElementById('remaining').textContent = d.remaining ? ('Restam ' + d.remaining) : '';
       document.getElementById('statusValue').textContent = d.statusLabel || d.status || '—';
+      // Hide redundant English pill — PT label is enough
       const pill = document.getElementById('statusPill');
-      pill.textContent = (d.status || '').replace('_', ' ');
+      pill.hidden = true;
       pill.className = 'status-pill ' + (d.status || 'on_track');
       document.getElementById('laps').textContent = d.laps != null ? d.laps : '—';
       document.getElementById('lapsMeta').textContent =
-        d.lapsDown != null ? (d.lapsDown + ' voltas atrás do líder') : (d.entry ? ('Entry ' + d.entry) : '');
+        d.lapsDown != null ? (d.lapsDown + ' atrás do líder') : (d.entry ? ('Entry ' + d.entry) : '');
       document.getElementById('lastLap').textContent = d.lastLap || '—';
       document.getElementById('bestLap').textContent = d.bestLap ? ('Melhor ' + d.bestLap) : '';
       document.getElementById('pits').textContent = d.pits != null ? d.pits : '—';
       const pitBits = [];
-      if (d.lastPitDuration) pitBits.push('último pit ' + d.lastPitDuration);
+      if (d.lastPitDuration) pitBits.push('último ' + d.lastPitDuration);
       if (d.stintTime) pitBits.push('stint ' + d.stintTime);
       document.getElementById('pitMeta').textContent = pitBits.join(' · ');
       document.getElementById('flag').textContent = d.flagLabel || d.flag || '—';
       document.getElementById('pitWindow').textContent =
-        d.pitWindow === 'open' ? 'Janela de boxes aberta' :
-        d.pitWindow === 'closed' ? 'Janela de boxes fechada' : '';
+        d.pitWindow === 'open' ? 'Boxes abertas' :
+        d.pitWindow === 'closed' ? 'Boxes fechadas' : '';
       neighbor('ahead', d.ahead);
       neighbor('behind', d.behind);
       const note = document.getElementById('note');
@@ -334,13 +353,13 @@
         note.textContent = d.note ? (d.note + ' · Piloto: ' + d.driver) : ('Piloto: ' + d.driver);
       }
       document.getElementById('history').innerHTML =
-        (d.history || []).slice(0, 10).map(x => '<li>' + esc(x) + '</li>').join('');
+        (d.history || []).slice(0, 8).map(x => '<li>' + esc(x) + '</li>').join('');
     }
 
     async function tick() {
       try { render(await loadStatus()); }
       catch (e) {
-        document.getElementById('root').innerHTML = '<div class="card err">Não foi possível carregar o estado. Recarrega daqui a um momento.</div>';
+        document.getElementById('root').innerHTML = '<div class="card">Não foi possível carregar. Recarrega já.</div>';
         console.error(e);
       }
     }
