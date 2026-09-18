@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="60" />
+  <title>#58 Moz Racing — Live</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #141a22;
+      --line: #243041;
+      --text: #e8eef7;
+      --muted: #8b9bb0;
+      --accent: #e11d48;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #1a1030 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, #3f0d1f 0%, transparent 50%),
+        var(--bg);
+      color: var(--text);
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+    header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+    .brand { font-family: "IBM Plex Mono", monospace; }
+    .brand .car { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+    .brand .team { color: var(--accent); font-weight: 700; font-size: 1.05rem; margin-top: 0.25rem; }
+    .brand .event { color: var(--muted); font-size: 0.85rem; margin-top: 0.35rem; }
+    .live {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.35rem 0.7rem; border-radius: 999px;
+      background: rgba(225, 29, 72, 0.15); border: 1px solid rgba(225, 29, 72, 0.45);
+      font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .live i { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(225,29,72,0.25); animation: pulse 1.4s infinite; }
+    @keyframes pulse { 50% { opacity: 0.45; } }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .brand .car { font-size: 2rem; } }
+    .card {
+      background: color-mix(in srgb, var(--card) 92%, black);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      padding: 1rem 1.1rem;
+    }
+    .card.hero { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    @media (max-width: 560px) { .card.hero { grid-template-columns: 1fr; } }
+    .label { color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+    .value { font-family: "IBM Plex Mono", monospace; font-size: 1.65rem; font-weight: 700; margin-top: 0.2rem; }
+    .value.sm { font-size: 1.15rem; }
+    .sub { color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem; }
+    .status-pill {
+      display: inline-block; margin-top: 0.35rem; padding: 0.25rem 0.6rem; border-radius: 999px;
+      font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; font-weight: 600;
+    }
+    .on_track, .outlap { background: rgba(34,197,94,0.15); color: var(--green); }
+    .in_pit, .pit { background: rgba(245,158,11,0.18); color: var(--amber); }
+    .retired { background: rgba(225,29,72,0.18); color: var(--accent); }
+    .note {
+      margin-top: 0.75rem; padding: 0.9rem 1rem; border-radius: 0.9rem;
+      border: 1px dashed rgba(225,29,72,0.5); background: rgba(225,29,72,0.08);
+      font-size: 0.95rem;
+    }
+    .history { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+    .history li {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; color: var(--muted);
+      padding: 0.45rem 0; border-bottom: 1px solid var(--line);
+    }
+    .history li:last-child { border-bottom: 0; }
+    footer { margin-top: 1.25rem; color: var(--muted); font-size: 0.8rem; line-height: 1.45; }
+    footer a { color: #93c5fd; }
+    .err { color: var(--accent); padding: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="car">#<span id="car">58</span></div>
+        <div class="team" id="team">Moz Racing</div>
+        <div class="event" id="event">Caterham Endurance 24H — Portimão</div>
+      </div>
+      <div class="live"><i></i> Live</div>
+    </header>
+
+    <div id="root" class="grid">
+      <div class="card hero">
+        <div>
+          <div class="label">Posição geral</div>
+          <div class="value" id="overall">—</div>
+          <div class="sub" id="classLine">—</div>
+        </div>
+        <div>
+          <div class="label">Estado</div>
+          <div class="value sm" id="statusValue">—</div>
+          <span class="status-pill on_track" id="statusPill">—</span>
+        </div>
+        <div>
+          <div class="label">Atualizado</div>
+          <div class="value sm" id="updated">—</div>
+          <div class="sub" id="remaining">—</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="label">Voltas</div>
+        <div class="value" id="laps">—</div>
+        <div class="sub" id="lapsMeta">—</div>
+      </div>
+      <div class="card">
+        <div class="label">Última volta</div>
+        <div class="value" id="lastLap">—</div>
+        <div class="sub" id="bestLap">—</div>
+      </div>
+      <div class="card">
+        <div class="label">Pits</div>
+        <div class="value" id="pits">—</div>
+        <div class="sub" id="pitMeta">—</div>
+      </div>
+      <div class="card">
+        <div class="label">Bandeira</div>
+        <div class="value sm" id="flag">—</div>
+        <div class="sub" id="pitWindow">—</div>
+      </div>
+
+      <div class="card" style="grid-column: 1 / -1">
+        <div class="label">Vizinhos</div>
+        <div class="sub" style="margin-top:0.5rem" id="neighbors">—</div>
+        <div class="note" id="note" hidden></div>
+        <ul class="history" id="history"></ul>
+      </div>
+    </div>
+
+    <footer>
+      Fonte: live timing Autódromo do Algarve · atualiza a cada ~1 min ·
+      <a href="https://github.com/MrJazzMan/moz-58-status" target="_blank" rel="noopener">código</a>
+    </footer>
+  </div>
+  <script>
+    const STATUS_URLS = [
+      './status.json',
+      'https://raw.githubusercontent.com/MrJazzMan/moz-58-status/main/status.json',
+      'https://cdn.jsdelivr.net/gh/MrJazzMan/moz-58-status@main/status.json'
+    ];
+
+    function esc(s) {
+      return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    async function loadStatus() {
+      const bust = '?t=' + Date.now();
+      let data = null, lastErr = null;
+      for (const base of STATUS_URLS) {
+        try {
+          const r = await fetch(base + bust, { cache: 'no-store' });
+          if (!r.ok) throw new Error(r.status + ' ' + base);
+          data = await r.json();
+          break;
+        } catch (e) { lastErr = e; }
+      }
+      if (!data) throw lastErr || new Error('sem dados');
+      return data;
+    }
+
+    function render(d) {
+      document.getElementById('car').textContent = d.car ?? 58;
+      document.getElementById('team').textContent = d.team || 'Moz Racing';
+      document.getElementById('event').textContent = d.event || '';
+      document.getElementById('overall').textContent = d.overallPos != null ? 'P' + d.overallPos : '—';
+      document.getElementById('classLine').textContent =
+        (d.classPos != null ? 'P' + d.classPos + ' ' : '') + (d.className || '');
+      document.getElementById('updated').textContent = d.updatedLabel || '—';
+      document.getElementById('remaining').textContent = d.remaining ? ('Restam ' + d.remaining) : '';
+      document.getElementById('statusValue').textContent = d.statusLabel || d.status || '—';
+      const pill = document.getElementById('statusPill');
+      pill.textContent = (d.status || '').replace('_', ' ');
+      pill.className = 'status-pill ' + (d.status || 'on_track');
+      document.getElementById('laps').textContent = d.laps != null ? d.laps : '—';
+      document.getElementById('lapsMeta').textContent =
+        d.lapsDown != null ? (d.lapsDown + ' voltas atrás do líder') : (d.entry ? ('Entry ' + d.entry) : '');
+      document.getElementById('lastLap').textContent = d.lastLap || '—';
+      document.getElementById('bestLap').textContent = d.bestLap ? ('Melhor ' + d.bestLap) : '';
+      document.getElementById('pits').textContent = d.pits != null ? d.pits : '—';
+      const pitBits = [];
+      if (d.lastPitDuration) pitBits.push('último pit ' + d.lastPitDuration);
+      if (d.stintTime) pitBits.push('stint ' + d.stintTime);
+      document.getElementById('pitMeta').textContent = pitBits.join(' · ');
+      document.getElementById('flag').textContent = d.flagLabel || d.flag || '—';
+      document.getElementById('pitWindow').textContent =
+        d.pitWindow === 'open' ? 'Janela de boxes aberta' :
+        d.pitWindow === 'closed' ? 'Janela de boxes fechada' : '';
+      const parts = [];
+      if (d.ahead) parts.push('↑ #' + d.ahead.car + ' ' + (d.ahead.team || '') + (d.ahead.gap ? ' · ' + d.ahead.gap : ''));
+      if (d.behind) parts.push('↓ #' + d.behind.car + ' ' + (d.behind.team || '') + (d.behind.gap ? ' · ' + d.behind.gap : ''));
+      if (d.driver) parts.push('Piloto: ' + d.driver);
+      document.getElementById('neighbors').innerHTML = parts.map(esc).join('<br>') || '—';
+      const note = document.getElementById('note');
+      if (d.note) { note.hidden = false; note.textContent = d.note; }
+      else { note.hidden = true; }
+      const h = document.getElementById('history');
+      h.innerHTML = (d.history || []).slice(0, 8).map(x => '<li>' + esc(x) + '</li>').join('');
+    }
+
+    async function tick() {
+      try { render(await loadStatus()); }
+      catch (e) {
+        document.getElementById('root').innerHTML = '<div class="card err">Não foi possível carregar o estado. Recarrega daqui a um momento.</div>';
+        console.error(e);
+      }
+    }
+    tick();
+    setInterval(tick, 60000);
+  </script>
+</body>
+</html>

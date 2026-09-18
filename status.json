@@ -1,0 +1,33 @@
+{
+  "car": 58,
+  "team": "Moz Racing",
+  "entry": "+258",
+  "event": "Caterham Endurance 24H — Portimão",
+  "updatedAt": "2026-09-18T21:12:00+01:00",
+  "updatedLabel": "21:12 PT",
+  "overallPos": 19,
+  "className": "Gentlemen",
+  "classPos": 10,
+  "laps": 100,
+  "lapsDown": null,
+  "lastLap": "2:42.299",
+  "bestLap": null,
+  "status": "on_track",
+  "statusLabel": "Em pista (OutLap após box)",
+  "pits": 7,
+  "lastPitDuration": "10:13",
+  "stintTime": null,
+  "flag": "green",
+  "flagLabel": "Verde (amarelo local T12)",
+  "pitWindow": "open",
+  "remaining": "18:54:40",
+  "ahead": { "car": 51, "team": "Scuderia Bandeiras I", "gap": "4:15.727" },
+  "behind": { "car": 50, "team": "Scuderia Bandeiras II", "gap": "4:19.652" },
+  "note": "Próxima box prevista ~22:00 — entrada do Pedro Garcia",
+  "driver": null,
+  "history": [
+    "21:12 OutLap após pit ~10:13 → P19 / P10",
+    "21:00 Na box (7.ª) · P17 / P8 · 106v",
+    "20:47 Em pista · P18 / P9 · 94v · última 2:33.7"
+  ]
+}
