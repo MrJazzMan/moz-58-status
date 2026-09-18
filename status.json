@@ -3,24 +3,24 @@
   "team": "Moz Racing",
   "entry": "+258",
   "event": "Caterham Endurance 24H — Portimão",
-  "updatedAt": "2026-09-19T00:26:00+01:00",
-  "updatedLabel": "00:26 PT",
+  "updatedAt": "2026-09-19T00:35:00+01:00",
+  "updatedLabel": "00:35 PT",
   "overallPos": 20,
   "className": "Gentlemen",
   "classPos": 11,
-  "laps": 152,
-  "lapsDown": 10,
-  "lastLap": "2:34.517",
+  "laps": 156,
+  "lapsDown": 9,
+  "lastLap": "2:49.977",
   "bestLap": null,
   "status": "on_track",
-  "statusLabel": "Em pista (out lap)",
+  "statusLabel": "Em pista",
   "pits": 11,
   "lastPitDuration": "15:03",
-  "stintTime": "01:31",
+  "stintTime": "10:36",
   "flag": "green",
-  "flagLabel": "Verde · LIGHTS ON · PIT WINDOW CLOSE",
+  "flagLabel": "Verde · LIGHTS ON · PIT WINDOW CLOSE · DY T4-5/T6",
   "pitWindow": "close",
-  "remaining": "15:34:15",
+  "remaining": "15:25:10",
   "ahead": {
     "car": 81,
     "team": "AZ Racing Team",
@@ -37,7 +37,7 @@
     "gap": "−2 voltas",
     "status": "on_track"
   },
-  "note": "🏎️ Moz Racing #58 (+258) — 00:26 PT\nEm pista (saiu da 11.ª box · out lap) · P20 geral / P11 Gentlemen\n152 voltas (−10 ao líder #14 Synergy)\nÚltima: 2:34,517 · stint: 1:31 · 11 pits (último ~15:03)\nÀ frente: #81 AZ Racing Team · +1 volta\nAtrás: #6 Zome · −2 voltas\nBandeira verde · LIGHTS ON · PIT WINDOW CLOSE · restam 15:34\nPedro ~03:00",
+  "note": "🏎️ Moz Racing #58 (+258) — 00:35 PT\nEm pista · P20 geral / P11 Gentlemen\n156 voltas (−9 ao líder #14 Synergy)\nÚltima: 2:49,977 · stint: 10:36 · 11 pits (último ~15:03)\nÀ frente: #81 AZ Racing Team · +1 volta\nAtrás: #6 Zome · −2 voltas\nBandeira verde · LIGHTS ON · PIT WINDOW CLOSE · restam 15:25\nOrg: double yellow T4-5 / T6\nPedro ~03:00",
   "driver": null,
   "teams": {
     "11": {
@@ -127,6 +127,7 @@
     }
   },
   "history": [
+    "00:35 Em pista · P20 / P11 Gentlemen · 156v (−9) · última 2:49,977 · stint 10:36 · 11 pits (último ~15:03) · #81 AZ Racing +1v · #6 Zome −2v · Verde · LIGHTS ON · PIT WINDOW CLOSE · restam 15:25 · DY T4-5/T6 · Pedro ~03:00",
     "00:26 Em pista (saiu 11.ª box · out lap) · P20 / P11 Gentlemen · 152v (−10) · última 2:34,517 · stint 1:31 · 11 pits (último ~15:03) · #81 AZ Racing +1v · #6 Zome −2v · Verde · LIGHTS ON · PIT WINDOW CLOSE · restam 15:34 · Pedro ~03:00",
     "00:05 Em pista (saiu 10.ª box) · P17 / P9 Gentlemen · 150v (−8) · última 2:25,754 · stint 15:43 · 10 pits (último ~03:12) · #84 Tracto Lena (box) +1v · #11 Wall Up|Coyote (box) −2v · Verde · LIGHTS ON · PIT WINDOW OPEN · restam 15:54 · Pedro ~03:00",
     "00:04 Em pista (saiu 10.ª box) · P17 / P9 Gentlemen · 150v (−8) · última 2:25,754 · stint 14:40 · 10 pits (último ~03:12) · #84 Tracto Lena (box) +5:34,026 · #11 Wall Up|Coyote (box) −2v · Verde · LIGHTS ON · PIT WINDOW OPEN · restam 15:55 · Pedro ~03:00",
@@ -137,7 +138,6 @@
     "22:34 Classificação ~6h: mapa de equipas. #58 Na box LONGA P17 / P9.",
     "22:26 Na box LONGA (8.ª) · ~28:55 · P17 / P9 · 117v (−10)",
     "22:20 Na box LONGA (8.ª) · ~21:33 · P17 / P9 · 117v (−10)",
-    "22:04 Na box (8.ª) · P17 / P9 · 117v (−8) · Pedro ~03:00",
-    "21:53 Em pista · P19 / P10 · 114v (−6) · 7 pits · PIT WINDOW OPEN"
+    "22:04 Na box (8.ª) · P17 / P9 · 117v (−8) · Pedro ~03:00"
   ]
 }
