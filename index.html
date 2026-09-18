@@ -3,16 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="theme-color" content="#fff8ef" />
   <meta http-equiv="refresh" content="60" />
   <title>#58 Moz Racing — Summer Live</title>
+  <!-- Theme locked: summer light only. Do not add dark mode. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
+      color-scheme: light only;
       --sand: #fff8ef;
       --sand-2: #ffe8c8;
-      --card: rgba(255, 255, 255, 0.82);
+      --card: rgba(255, 255, 255, 0.88);
       --ink: #1c2a3a;
       --muted: #5b6b7c;
       --sky: #3ba7e0;
@@ -22,6 +26,11 @@
       --sea: #2bb673;
       --line: rgba(28, 42, 58, 0.1);
       --shadow: 0 12px 40px rgba(30, 80, 120, 0.12);
+    }
+    /* Force light even if the phone/OS is in dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme: light only; }
+      body { background: linear-gradient(180deg, #e8f6ff 0%, #fff8ef 42%, #ffe8c8 100%) !important; color: #1c2a3a !important; }
     }
     * { box-sizing: border-box; }
     body {
@@ -53,7 +62,7 @@
       width: 0.48rem; height: 0.48rem; border-radius: 50%; background: var(--coral);
       box-shadow: 0 0 0 4px rgba(255,107,74,0.2); animation: pulse 1.4s infinite;
     }
-    .edition { background: rgba(245,185,66,0.22); color: #9a6b00; border: 1px solid rgba(245,185,66,0.45); }
+    .edition { background: rgba(245,185,66,0.28); color: #9a6b00; border: 1px solid rgba(245,185,66,0.5); }
     @keyframes pulse { 50% { opacity: 0.4; } }
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
     @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .brand .car { font-size: 2.1rem; } }
@@ -63,23 +72,23 @@
     }
     .card.hero {
       grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem;
-      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,248,239,0.88)), var(--card);
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,248,239,0.9)), var(--card);
     }
     @media (max-width: 560px) { .card.hero { grid-template-columns: 1fr; } }
     .card.neighbors {
       grid-column: 1 / -1;
       display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: stretch;
       padding: 0.85rem;
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(232,246,255,0.9));
+      background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(232,246,255,0.92));
       border: 2px solid rgba(59,167,224,0.35);
     }
     @media (max-width: 560px) { .card.neighbors { grid-template-columns: 1fr; } .us-chip { order: -1; } }
     .nb {
       border-radius: 1rem; padding: 0.9rem 1rem;
-      border: 1px solid var(--line); background: rgba(255,255,255,0.75);
+      border: 1px solid var(--line); background: rgba(255,255,255,0.85);
     }
-    .nb.ahead { border-color: rgba(43,182,115,0.35); background: rgba(43,182,115,0.08); }
-    .nb.behind { border-color: rgba(255,107,74,0.35); background: rgba(255,107,74,0.08); }
+    .nb.ahead { border-color: rgba(43,182,115,0.35); background: rgba(43,182,115,0.1); }
+    .nb.behind { border-color: rgba(255,107,74,0.35); background: rgba(255,107,74,0.1); }
     .nb .dir {
       font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
       color: var(--muted); margin-bottom: 0.25rem;
@@ -121,8 +130,8 @@
     .history li { font-size: 0.82rem; color: var(--muted); padding: 0.45rem 0; border-bottom: 1px solid var(--line); }
     .history li:last-child { border-bottom: 0; }
     footer { margin-top: 1.3rem; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
-    footer a { color: var(--sky-deep); font-weight: 600; }
-    .err { color: var(--coral); padding: 1rem; }
+    footer a { color: #1e7eb8; font-weight: 600; }
+    .err { color: #ff6b4a; padding: 1rem; }
     .sun {
       position: fixed; top: -40px; right: -30px; width: 160px; height: 160px; border-radius: 50%;
       background: radial-gradient(circle at 35% 35%, #fff3c4, #f5b942 45%, transparent 70%);
@@ -141,7 +150,7 @@
       </div>
       <div class="badge-row">
         <div class="live"><i></i> Live</div>
-        <div class="edition">☀ Summer edition</div>
+        <div class="edition">☀ Summer · light always</div>
       </div>
     </header>
 
@@ -209,7 +218,7 @@
     </div>
 
     <footer>
-      Mais simples que o livetiming · atualiza ~1 min ·
+      Summer light always on · atualiza ~1 min ·
       <a href="https://github.com/MrJazzMan/moz-58-status" target="_blank" rel="noopener">código</a>
       · partilha:
       <a href="https://htmlpreview.github.io/?https://github.com/MrJazzMan/moz-58-status/blob/main/index.html" target="_blank" rel="noopener">abrir página</a>
@@ -244,11 +253,7 @@
     function neighbor(side, d) {
       const who = document.getElementById(side + 'Who');
       const gap = document.getElementById(side + 'Gap');
-      if (!d) {
-        who.textContent = '—';
-        gap.textContent = '—';
-        return;
-      }
+      if (!d) { who.textContent = '—'; gap.textContent = '—'; return; }
       who.textContent = '#' + d.car + (d.team ? ' · ' + d.team : '');
       gap.textContent = d.gap || d.diff || '—';
     }
@@ -282,17 +287,14 @@
       document.getElementById('pitWindow').textContent =
         d.pitWindow === 'open' ? 'Janela de boxes aberta' :
         d.pitWindow === 'closed' ? 'Janela de boxes fechada' : '';
-
       neighbor('ahead', d.ahead);
       neighbor('behind', d.behind);
-
       const note = document.getElementById('note');
       if (d.note) { note.hidden = false; note.textContent = d.note; }
       else { note.hidden = true; }
       if (d.driver) {
-        const extra = 'Piloto: ' + d.driver;
         note.hidden = false;
-        note.textContent = d.note ? (d.note + ' · ' + extra) : extra;
+        note.textContent = d.note ? (d.note + ' · Piloto: ' + d.driver) : ('Piloto: ' + d.driver);
       }
       document.getElementById('history').innerHTML =
         (d.history || []).slice(0, 8).map(x => '<li>' + esc(x) + '</li>').join('');
