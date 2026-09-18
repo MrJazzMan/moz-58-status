@@ -8,6 +8,7 @@
   <meta http-equiv="refresh" content="60" />
   <title>#58 Moz Racing — Summer Live</title>
   <!-- Theme locked: summer light only. Do not add dark mode. -->
+  <!-- Numbers: PT metric — comma decimals, gaps in segundos (s). -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
@@ -76,7 +77,6 @@
 
     .dash-left { display: flex; flex-direction: column; gap: 0.55rem; }
 
-    /* Always 3 columns — never stack vertically */
     .hero-row {
       display: grid;
       grid-template-columns: 1.1fr 1fr 1.1fr;
@@ -260,14 +260,14 @@
           <div class="dir">↑ À frente</div>
           <div class="who" id="aheadWho">—</div>
           <div class="gap" id="aheadGap">—</div>
-          <div class="gap-label">gap</div>
+          <div class="gap-label" id="aheadGapLabel">segundos</div>
         </div>
         <div class="us-chip">#58<small id="usPos">TU</small></div>
         <div class="nb behind" id="behindBox">
           <div class="dir">↓ Atrás</div>
           <div class="who" id="behindWho">—</div>
           <div class="gap" id="behindGap">—</div>
-          <div class="gap-label">gap</div>
+          <div class="gap-label" id="behindGapLabel">segundos</div>
         </div>
       </div>
     </div>
@@ -290,6 +290,28 @@
       return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }
 
+    /** English decimal point → Portuguese comma (2:30.495 → 2:30,495). */
+    function ptComma(s) {
+      if (s == null || s === '') return '';
+      return String(s).replace(/(\d)\.(\d+)/g, '$1,$2');
+    }
+
+    /** Format a race gap for display: "12,299 s" or "1 volta". */
+    function formatGap(raw) {
+      if (raw == null || raw === '') return { value: '—', unit: 'segundos' };
+      let s = String(raw).trim();
+      if (/volta|lap/i.test(s)) {
+        return { value: ptComma(s.replace(/\blaps?\b/gi, 'voltas').replace(/\blap\b/gi, 'volta')), unit: '' };
+      }
+      // strip trailing unit then re-add " s"
+      s = s.replace(/\s*(s|sec|secs|seconds?)\.?$/i, '').trim();
+      s = ptComma(s);
+      if (!s) return { value: '—', unit: 'segundos' };
+      // mm:ss style already has time meaning
+      if (/^\d+:\d/.test(s)) return { value: s, unit: 'min:s' };
+      return { value: s + ' s', unit: 'segundos' };
+    }
+
     async function loadStatus() {
       const bust = '?t=' + Date.now();
       let data = null, lastErr = null;
@@ -307,10 +329,18 @@
 
     function neighbor(side, d) {
       const who = document.getElementById(side + 'Who');
-      const gap = document.getElementById(side + 'Gap');
-      if (!d) { who.textContent = '—'; gap.textContent = '—'; return; }
+      const gapEl = document.getElementById(side + 'Gap');
+      const labelEl = document.getElementById(side + 'GapLabel');
+      if (!d) {
+        who.textContent = '—';
+        gapEl.textContent = '—';
+        if (labelEl) labelEl.textContent = 'segundos';
+        return;
+      }
       who.textContent = '#' + d.car + (d.team ? ' · ' + d.team : '');
-      gap.textContent = d.gap || d.diff || '—';
+      const formatted = formatGap(d.gap || d.diff);
+      gapEl.textContent = formatted.value;
+      if (labelEl) labelEl.textContent = formatted.unit || 'segundos';
     }
 
     function render(d) {
@@ -323,21 +353,20 @@
       document.getElementById('usPos').textContent =
         d.overallPos != null ? ('P' + d.overallPos) : 'TU';
       document.getElementById('updated').textContent = d.updatedLabel || '—';
-      document.getElementById('remaining').textContent = d.remaining ? ('Restam ' + d.remaining) : '';
+      document.getElementById('remaining').textContent = d.remaining ? ('Restam ' + ptComma(d.remaining)) : '';
       document.getElementById('statusValue').textContent = d.statusLabel || d.status || '—';
-      // Hide redundant English pill — PT label is enough
       const pill = document.getElementById('statusPill');
       pill.hidden = true;
       pill.className = 'status-pill ' + (d.status || 'on_track');
       document.getElementById('laps').textContent = d.laps != null ? d.laps : '—';
       document.getElementById('lapsMeta').textContent =
-        d.lapsDown != null ? (d.lapsDown + ' atrás do líder') : (d.entry ? ('Entry ' + d.entry) : '');
-      document.getElementById('lastLap').textContent = d.lastLap || '—';
-      document.getElementById('bestLap').textContent = d.bestLap ? ('Melhor ' + d.bestLap) : '';
+        d.lapsDown != null ? (d.lapsDown + ' voltas atrás do líder') : (d.entry ? ('Entry ' + d.entry) : '');
+      document.getElementById('lastLap').textContent = d.lastLap ? ptComma(d.lastLap) : '—';
+      document.getElementById('bestLap').textContent = d.bestLap ? ('Melhor ' + ptComma(d.bestLap)) : '';
       document.getElementById('pits').textContent = d.pits != null ? d.pits : '—';
       const pitBits = [];
-      if (d.lastPitDuration) pitBits.push('último ' + d.lastPitDuration);
-      if (d.stintTime) pitBits.push('stint ' + d.stintTime);
+      if (d.lastPitDuration) pitBits.push('último ' + ptComma(d.lastPitDuration));
+      if (d.stintTime) pitBits.push('stint ' + ptComma(d.stintTime));
       document.getElementById('pitMeta').textContent = pitBits.join(' · ');
       document.getElementById('flag').textContent = d.flagLabel || d.flag || '—';
       document.getElementById('pitWindow').textContent =
@@ -346,14 +375,15 @@
       neighbor('ahead', d.ahead);
       neighbor('behind', d.behind);
       const note = document.getElementById('note');
-      if (d.note) { note.hidden = false; note.textContent = d.note; }
+      if (d.note) { note.hidden = false; note.textContent = ptComma(d.note); }
       else { note.hidden = true; }
       if (d.driver) {
         note.hidden = false;
-        note.textContent = d.note ? (d.note + ' · Piloto: ' + d.driver) : ('Piloto: ' + d.driver);
+        const base = d.note ? ptComma(d.note) : '';
+        note.textContent = base ? (base + ' · Piloto: ' + d.driver) : ('Piloto: ' + d.driver);
       }
       document.getElementById('history').innerHTML =
-        (d.history || []).slice(0, 8).map(x => '<li>' + esc(x) + '</li>').join('');
+        (d.history || []).slice(0, 8).map(x => '<li>' + esc(ptComma(x)) + '</li>').join('');
     }
 
     async function tick() {
