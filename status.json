@@ -3,64 +3,129 @@
   "team": "Moz Racing",
   "entry": "+258",
   "event": "Caterham Endurance 24H — Portimão",
-  "updatedAt": "2026-09-18T22:34:00+01:00",
-  "updatedLabel": "22:34 PT",
-  "overallPos": 17,
+  "updatedAt": "2026-09-18T22:37:43+01:00",
+  "updatedLabel": "22:37 PT",
+  "overallPos": 19,
   "className": "Gentlemen",
-  "classPos": 9,
-  "laps": 117,
-  "lapsDown": 10,
-  "lastLap": "2:39.657",
+  "classPos": 10,
+  "laps": 120,
+  "lapsDown": 7,
+  "lastLap": "2:34.673",
   "bestLap": null,
-  "status": "in_pit",
-  "statusLabel": "Na box",
+  "status": "on_track",
+  "statusLabel": "Em pista",
   "pits": 8,
-  "lastPitDuration": "28:55",
-  "stintTime": "28:55",
+  "lastPitDuration": "30:04.978",
+  "stintTime": "9:33.620",
   "flag": "green",
   "flagLabel": "Verde · LIGHTS ON · PIT WINDOW CLOSE",
   "pitWindow": "closed",
-  "remaining": "~17:26",
+  "remaining": "17:22:16",
   "ahead": {
-    "car": 50,
-    "team": "Scuderia Bandeiras II",
+    "car": 52,
+    "team": "RXF",
     "className": "Gentlemen",
-    "classPos": 7,
-    "gap": "em pista · +1 volta"
+    "classPos": 9,
+    "gap": 68.46
   },
   "behind": {
-    "car": 7,
-    "team": "Caterham Factory",
-    "className": "Pro",
-    "classPos": 9,
-    "gap": "OutLap · −1 volta"
+    "car": 6,
+    "team": "Zome",
+    "className": "Gentlemen",
+    "classPos": 11,
+    "gap": "−1 volta"
   },
-  "note": "Na box LONGA · 8.ª · ~28:55 · P17 / P9 Gentlemen · À frente #50 Scuderia Bandeiras II (Gentlemen P7) · Atrás #7 Caterham Factory (Pro P9) · Pedro ~03:00.",
+  "note": "SAIU da box · pit longa ~30:04,978 · agora em pista · P19 / P10 Gentlemen · 120 voltas (−7) · última 2:34,673 · stint 9:33,620 · À frente #52 RXF (Gentlemen P9) · 1:08,460 · Atrás #6 Zome (−1v) · janela FECHADA · Pedro ~03:00.",
   "driver": null,
   "teams": {
-    "11": { "name": "Wall Up | Coyote Racing", "class": "Pro" },
-    "77": { "name": "Speisse | Superlemon", "class": "Pro" },
-    "14": { "name": "Synergy Driver Perform", "class": "Pro" },
-    "9": { "name": "Caterham Motorsport F", "class": "Pro" },
-    "74": { "name": "Minho Jantes", "class": "Pro" },
-    "57": { "name": "Hirundo Motors", "class": "Pro" },
-    "24": { "name": "Gupe", "class": "Gentlemen" },
-    "27": { "name": "Auto Restelo", "class": "Pro" },
-    "12": { "name": "Floripa Racing Team", "class": "Gentlemen" },
-    "22": { "name": "Noori Sushi ALM", "class": "Gentlemen" },
-    "8": { "name": "Caterham Motorsport B", "class": "Gentlemen" },
-    "10": { "name": "Charm Nature", "class": "Gentlemen" },
-    "51": { "name": "Scuderia Bandeiras I", "class": "Gentlemen" },
-    "17": { "name": "AIA Racing School", "class": "Pro" },
-    "50": { "name": "Scuderia Bandeiras II", "class": "Gentlemen" },
-    "84": { "name": "Tracto Lena", "class": "Gentlemen" },
-    "58": { "name": "Moz Racing", "class": "Gentlemen", "entry": "+258" },
-    "7": { "name": "Caterham Factory", "class": "Pro" },
-    "52": { "name": "RXF", "class": "Gentlemen" },
-    "6": { "name": "Zome", "class": "Gentlemen" },
-    "81": { "name": "AZ Racing Team", "class": "Gentlemen" }
+    "11": {
+      "name": "Wall Up | Coyote Racing",
+      "class": "Pro"
+    },
+    "77": {
+      "name": "Speisse | Superlemon",
+      "class": "Pro"
+    },
+    "14": {
+      "name": "Synergy Driver Perform",
+      "class": "Pro"
+    },
+    "9": {
+      "name": "Caterham Motorsport F",
+      "class": "Pro"
+    },
+    "74": {
+      "name": "Minho Jantes",
+      "class": "Pro"
+    },
+    "57": {
+      "name": "Hirundo Motors",
+      "class": "Pro"
+    },
+    "24": {
+      "name": "Gupe",
+      "class": "Gentlemen"
+    },
+    "27": {
+      "name": "Auto Restelo",
+      "class": "Pro"
+    },
+    "12": {
+      "name": "Floripa Racing Team",
+      "class": "Gentlemen"
+    },
+    "22": {
+      "name": "Noori Sushi ALM",
+      "class": "Gentlemen"
+    },
+    "8": {
+      "name": "Caterham Motorsport B",
+      "class": "Gentlemen"
+    },
+    "10": {
+      "name": "Charm Nature",
+      "class": "Gentlemen"
+    },
+    "51": {
+      "name": "Scuderia Bandeiras I",
+      "class": "Gentlemen"
+    },
+    "17": {
+      "name": "AIA Racing School",
+      "class": "Pro"
+    },
+    "50": {
+      "name": "Scuderia Bandeiras II",
+      "class": "Gentlemen"
+    },
+    "84": {
+      "name": "Tracto Lena",
+      "class": "Gentlemen"
+    },
+    "58": {
+      "name": "Moz Racing",
+      "class": "Gentlemen",
+      "entry": "+258"
+    },
+    "7": {
+      "name": "Caterham Factory",
+      "class": "Pro"
+    },
+    "52": {
+      "name": "RXF",
+      "class": "Gentlemen"
+    },
+    "6": {
+      "name": "Zome",
+      "class": "Gentlemen"
+    },
+    "81": {
+      "name": "AZ Racing Team",
+      "class": "Gentlemen"
+    }
   },
   "history": [
+    "22:37 SAIU da box (pit ~30:04,978) → em pista · P19 / P10 · 120v (−7) · última 2:34,673 · stint ~9:30 · DIFF 1:08,460 vs #52 RXF · Verde · LIGHTS ON · PIT WINDOW CLOSE",
     "22:34 Classificação ~6h: mapa de equipas (Pro/Gentlemen). Vizinhos #50 Scuderia Bandeiras II (Gent. P7) e #7 Caterham Factory (Pro P9). #58 continua Na box LONGA P17 / P9.",
     "22:26 Na box LONGA (8.ª) · ~28:55 · P17 / P9 · 117v (−10) · última 2:39,657 · DIFF 8:15,886 · Verde · LIGHTS ON · PIT WINDOW CLOSE · #50 saiu (pista) · #7 OutLap (−1v)",
     "22:20 Na box LONGA (8.ª) · ~21:33 · P17 / P9 · 117v (−10) · última 2:39,657 · Verde · LIGHTS ON · PIT WINDOW CLOSE · #50 +1v · #7 −1v",
@@ -71,7 +136,6 @@
     "21:32 Em pista · P19 / P10 · 106v (−5) · última 4:43,199 · VERDE (banner SC) · #52 +4,5 s · #6 +1,3 s",
     "21:28 Em pista · P19 / P10 · ~105v · última 4:38,320 · AMARELO + SC IN THIS LAP · #52 +8,4 s · #6 +2,7 s",
     "21:16 Em pista · P20 / P11 · ~102v · última 2:33,251 · stint ~5 min · 7 pits",
-    "21:12 OutLap após pit ~10:13 → P19 / P10 · 100v · 7 pits",
-    "21:00 Na box (7.ª) · P17 / P8"
+    "21:12 OutLap após pit ~10:13 → P19 / P10 · 100v · 7 pits"
   ]
 }
