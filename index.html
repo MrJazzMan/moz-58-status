@@ -16,10 +16,9 @@
       color-scheme: light only;
       --sand: #fff8ef;
       --sand-2: #ffe8c8;
-      --card: rgba(255, 255, 255, 0.88);
+      --card: rgba(255, 255, 255, 0.9);
       --ink: #1c2a3a;
       --muted: #5b6b7c;
-      --sky: #3ba7e0;
       --coral: #ff6b4a;
       --line: rgba(28, 42, 58, 0.1);
       --shadow: 0 12px 40px rgba(30, 80, 120, 0.12);
@@ -37,7 +36,7 @@
         radial-gradient(700px 420px at -5% 20%, #b8e4ff 0%, transparent 50%),
         linear-gradient(180deg, #e8f6ff 0%, var(--sand) 42%, var(--sand-2) 100%);
     }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 1.4rem 1rem 3rem; position: relative; z-index: 1; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 1.4rem 1rem 3rem; position: relative; z-index: 1; }
     header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.1rem; }
     .brand .car { font-family: "Space Grotesk", sans-serif; font-size: 2.6rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
     .brand .team {
@@ -60,37 +59,62 @@
     }
     .edition { background: rgba(245,185,66,0.28); color: #9a6b00; border: 1px solid rgba(245,185,66,0.5); }
     @keyframes pulse { 50% { opacity: 0.4; } }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .brand .car { font-size: 2.1rem; } }
+
+    .stack { display: flex; flex-direction: column; gap: 0.8rem; }
     .card {
       background: var(--card); border: 1px solid var(--line); border-radius: 1.15rem;
       padding: 1rem 1.1rem; box-shadow: var(--shadow); backdrop-filter: blur(10px);
     }
-    .card.hero {
-      grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem;
-      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,248,239,0.9)), var(--card);
+
+    /* Merged: live numbers LEFT + race updates RIGHT */
+    .card.dashboard {
+      display: grid;
+      grid-template-columns: minmax(240px, 0.95fr) minmax(280px, 1.15fr);
+      gap: 1rem;
+      align-items: start;
+      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,248,239,0.92));
     }
-    @media (max-width: 560px) { .card.hero { grid-template-columns: 1fr; } }
-    .card.story {
-      grid-column: 1 / -1;
-      border: 1px solid rgba(59,167,224,0.28);
-      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(240,249,255,0.92));
+    @media (max-width: 720px) {
+      .card.dashboard { grid-template-columns: 1fr; }
+      .brand .car { font-size: 2.1rem; }
     }
-    .card.story .label { margin-bottom: 0.55rem; }
+    .dash-left { display: flex; flex-direction: column; gap: 0.85rem; }
+    .hero-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem;
+    }
+    @media (max-width: 520px) { .hero-row { grid-template-columns: 1fr; } }
+    .metrics {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem;
+    }
+    .metric {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      padding: 0.7rem 0.8rem;
+    }
+    .dash-right {
+      border-left: 1px solid var(--line);
+      padding-left: 1rem;
+      min-height: 100%;
+    }
+    @media (max-width: 720px) {
+      .dash-right { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 0.85rem; }
+    }
+    .dash-right .label { margin-bottom: 0.5rem; }
     .note {
-      padding: 0.9rem 1rem; border-radius: 0.95rem;
+      padding: 0.8rem 0.9rem; border-radius: 0.9rem;
       border: 1.5px dashed rgba(59,167,224,0.6); background: rgba(59,167,224,0.12);
-      font-size: 0.98rem; font-weight: 600; line-height: 1.45; color: var(--ink);
+      font-size: 0.92rem; font-weight: 600; line-height: 1.4; color: var(--ink);
     }
-    .history { list-style: none; padding: 0; margin: 0.35rem 0 0; }
+    .history { list-style: none; padding: 0; margin: 0.3rem 0 0; max-height: 280px; overflow: auto; }
     .history li {
-      font-size: 0.86rem; color: var(--muted); padding: 0.7rem 0;
-      border-bottom: 1px solid var(--line); line-height: 1.4;
+      font-size: 0.82rem; color: var(--muted); padding: 0.55rem 0;
+      border-bottom: 1px solid var(--line); line-height: 1.35;
     }
     .history li:first-child { color: var(--ink); font-weight: 600; }
-    .history li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .history li:last-child { border-bottom: 0; }
+
     .card.neighbors {
-      grid-column: 1 / -1;
       display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: stretch;
       padding: 0.85rem;
       background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(232,246,255,0.92));
@@ -125,13 +149,14 @@
       box-shadow: 0 8px 20px rgba(255,107,74,0.28); min-width: 4.5rem;
     }
     .us-chip small { display: block; font-size: 0.65rem; opacity: 0.9; font-weight: 600; letter-spacing: 0.04em; }
-    .label { color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; }
-    .value { font-family: "Space Grotesk", sans-serif; font-size: 1.7rem; font-weight: 700; margin-top: 0.15rem; }
-    .value.sm { font-size: 1.15rem; }
-    .sub { color: var(--muted); font-size: 0.88rem; margin-top: 0.2rem; }
+    .label { color: var(--muted); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; }
+    .value { font-family: "Space Grotesk", sans-serif; font-size: 1.55rem; font-weight: 700; margin-top: 0.12rem; }
+    .value.sm { font-size: 1.05rem; }
+    .value.tiny { font-size: 0.95rem; line-height: 1.25; }
+    .sub { color: var(--muted); font-size: 0.8rem; margin-top: 0.15rem; }
     .status-pill {
-      display: inline-block; margin-top: 0.35rem; padding: 0.28rem 0.65rem;
-      border-radius: 999px; font-size: 0.8rem; font-weight: 700;
+      display: inline-block; margin-top: 0.3rem; padding: 0.22rem 0.55rem;
+      border-radius: 999px; font-size: 0.75rem; font-weight: 700;
     }
     .on_track, .outlap { background: rgba(43,182,115,0.16); color: #187a4a; }
     .in_pit, .pit { background: rgba(245,185,66,0.22); color: #9a6b00; }
@@ -161,29 +186,55 @@
       </div>
     </header>
 
-    <div id="root" class="grid">
-      <div class="card hero">
-        <div>
-          <div class="label">Posição geral</div>
-          <div class="value" id="overall">—</div>
-          <div class="sub" id="classLine">—</div>
+    <div class="stack" id="root">
+      <div class="card dashboard">
+        <div class="dash-left">
+          <div class="hero-row">
+            <div>
+              <div class="label">Posição geral</div>
+              <div class="value" id="overall">—</div>
+              <div class="sub" id="classLine">—</div>
+            </div>
+            <div>
+              <div class="label">Estado</div>
+              <div class="value sm" id="statusValue">—</div>
+              <span class="status-pill on_track" id="statusPill">—</span>
+            </div>
+            <div>
+              <div class="label">Atualizado</div>
+              <div class="value sm" id="updated">—</div>
+              <div class="sub" id="remaining">—</div>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <div class="label">Voltas</div>
+              <div class="value" id="laps">—</div>
+              <div class="sub" id="lapsMeta">—</div>
+            </div>
+            <div class="metric">
+              <div class="label">Última volta</div>
+              <div class="value" id="lastLap">—</div>
+              <div class="sub" id="bestLap">—</div>
+            </div>
+            <div class="metric">
+              <div class="label">Pits</div>
+              <div class="value" id="pits">—</div>
+              <div class="sub" id="pitMeta">—</div>
+            </div>
+            <div class="metric">
+              <div class="label">Bandeira</div>
+              <div class="value tiny" id="flag">—</div>
+              <div class="sub" id="pitWindow">—</div>
+            </div>
+          </div>
         </div>
-        <div>
-          <div class="label">Estado</div>
-          <div class="value sm" id="statusValue">—</div>
-          <span class="status-pill on_track" id="statusPill">—</span>
-        </div>
-        <div>
-          <div class="label">Atualizado</div>
-          <div class="value sm" id="updated">—</div>
-          <div class="sub" id="remaining">—</div>
-        </div>
-      </div>
 
-      <div class="card story">
-        <div class="label">Updates da corrida</div>
-        <div class="note" id="note" hidden></div>
-        <ul class="history" id="history"></ul>
+        <div class="dash-right">
+          <div class="label">Updates da corrida</div>
+          <div class="note" id="note" hidden></div>
+          <ul class="history" id="history"></ul>
+        </div>
       </div>
 
       <div class="card neighbors" id="neighborsCard">
@@ -200,27 +251,6 @@
           <div class="gap" id="behindGap">—</div>
           <div class="gap-label">gap / distância</div>
         </div>
-      </div>
-
-      <div class="card">
-        <div class="label">Voltas</div>
-        <div class="value" id="laps">—</div>
-        <div class="sub" id="lapsMeta">—</div>
-      </div>
-      <div class="card">
-        <div class="label">Última volta</div>
-        <div class="value" id="lastLap">—</div>
-        <div class="sub" id="bestLap">—</div>
-      </div>
-      <div class="card">
-        <div class="label">Pits</div>
-        <div class="sub" id="pitMeta">—</div>
-        <div class="value" id="pits">—</div>
-      </div>
-      <div class="card">
-        <div class="label">Bandeira</div>
-        <div class="value sm" id="flag">—</div>
-        <div class="sub" id="pitWindow">—</div>
       </div>
     </div>
 
