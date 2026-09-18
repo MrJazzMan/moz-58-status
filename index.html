@@ -154,9 +154,10 @@
     .nb.ahead .dir { color: #187a4a; }
     .nb.behind .dir { color: #c2410c; }
     .nb .who { font-weight: 700; font-size: 0.9rem; }
+    .nb .klass { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; font-weight: 600; }
     .nb .gap {
       font-family: "Space Grotesk", sans-serif;
-      font-size: 1.55rem; font-weight: 700; margin-top: 0.2rem; line-height: 1;
+      font-size: 1.35rem; font-weight: 700; margin-top: 0.25rem; line-height: 1.1;
     }
     .nb.ahead .gap { color: #187a4a; }
     .nb.behind .gap { color: #c2410c; }
@@ -259,6 +260,7 @@
         <div class="nb ahead" id="aheadBox">
           <div class="dir">↑ À frente</div>
           <div class="who" id="aheadWho">—</div>
+          <div class="klass" id="aheadClass"></div>
           <div class="gap" id="aheadGap">—</div>
           <div class="gap-label" id="aheadGapLabel">segundos</div>
         </div>
@@ -266,6 +268,7 @@
         <div class="nb behind" id="behindBox">
           <div class="dir">↓ Atrás</div>
           <div class="who" id="behindWho">—</div>
+          <div class="klass" id="behindClass"></div>
           <div class="gap" id="behindGap">—</div>
           <div class="gap-label" id="behindGapLabel">segundos</div>
         </div>
@@ -301,6 +304,10 @@
       if (/volta|lap/i.test(s)) {
         return { value: ptComma(s.replace(/\blaps?\b/gi, 'voltas').replace(/\blap\b/gi, 'volta')), unit: '' };
       }
+      // already a phrase (em pista, OutLap, …)
+      if (/[a-zA-Zà-úÀ-Ú]/.test(s) && !/^\d/.test(s)) {
+        return { value: ptComma(s), unit: '' };
+      }
       s = s.replace(/\s*(s|sec|secs|seconds?)\.?$/i, '').trim();
       s = ptComma(s);
       if (!s) return { value: '—', unit: 'segundos' };
@@ -308,12 +315,33 @@
       return { value: s + ' s', unit: 'segundos' };
     }
 
-    /** Accept both overnight and older field names. */
+    function teamName(d, teams) {
+      if (!d) return null;
+      const fromMap = teams && teams[String(d.car)];
+      if (fromMap && fromMap.name) return fromMap.name;
+      return d.team || null;
+    }
+
+    function classLine(d, teams) {
+      if (!d) return '';
+      const fromMap = teams && teams[String(d.car)];
+      const cls = d.className || d.class || (fromMap && fromMap.class) || '';
+      const pic = d.classPos != null ? d.classPos : null;
+      if (cls && pic != null) return cls + ' P' + pic;
+      if (cls) return cls;
+      if (pic != null) return 'P' + pic + ' classe';
+      return '';
+    }
+
+    /** Accept overnight + older field names. */
     function normalize(d) {
       return Object.assign({}, d, {
-        overallPos: d.overallPos ?? d.overall_pos ?? d.pos,
-        classPos: d.classPos ?? d.class_pos,
-        className: d.className ?? d.class_name,
+        car: d.car ?? d.carNumber ?? 58,
+        team: d.team ?? d.teamName ?? 'Moz Racing',
+        event: d.event ?? d.eventName ?? '',
+        overallPos: d.overallPos ?? d.overall_pos ?? d.pos ?? d.position,
+        classPos: d.classPos ?? d.class_pos ?? d.pic,
+        className: d.className ?? d.class_name ?? d.class,
         updatedLabel: d.updatedLabel ?? d.updated_label ?? d.updatedAt,
         statusLabel: d.statusLabel ?? d.status_label,
         lapsDown: d.lapsDown ?? d.laps_down,
@@ -321,7 +349,8 @@
         stintTime: d.stintTime ?? d.stint_time ?? d.stint,
         flagLabel: d.flagLabel ?? d.flag_label,
         pitWindow: d.pitWindow ?? d.pit_window,
-        remaining: d.remaining ?? d.timeRemaining
+        remaining: d.remaining ?? d.timeRemaining,
+        pits: d.pits ?? d.pitCount
       });
     }
 
@@ -340,20 +369,24 @@
       return data;
     }
 
-    function neighbor(side, d) {
+    function neighbor(side, d, teams) {
       const who = document.getElementById(side + 'Who');
+      const klass = document.getElementById(side + 'Class');
       const gapEl = document.getElementById(side + 'Gap');
       const labelEl = document.getElementById(side + 'GapLabel');
       if (!d) {
         who.textContent = '—';
+        if (klass) klass.textContent = '';
         gapEl.textContent = '—';
         if (labelEl) labelEl.textContent = 'segundos';
         return;
       }
-      who.textContent = '#' + d.car + (d.team ? ' · ' + d.team : '');
-      const formatted = formatGap(d.gap || d.diff);
+      const name = teamName(d, teams);
+      who.textContent = '#' + d.car + (name ? ' · ' + name : '');
+      if (klass) klass.textContent = classLine(d, teams);
+      const formatted = formatGap(d.gap || d.gap || d.diff);
       gapEl.textContent = formatted.value;
-      if (labelEl) labelEl.textContent = formatted.unit || 'segundos';
+      if (labelEl) labelEl.textContent = formatted.unit || '';
     }
 
     function render(d) {
@@ -385,8 +418,8 @@
       document.getElementById('pitWindow').textContent =
         d.pitWindow === 'open' ? 'Boxes abertas' :
         d.pitWindow === 'closed' ? 'Boxes fechadas' : '';
-      neighbor('ahead', d.ahead);
-      neighbor('behind', d.behind);
+      neighbor('ahead', d.ahead, d.teams);
+      neighbor('behind', d.behind, d.teams);
       const note = document.getElementById('note');
       if (d.note) { note.hidden = false; note.textContent = ptComma(d.note); }
       else { note.hidden = true; }
