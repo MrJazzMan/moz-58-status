@@ -125,7 +125,7 @@
     }
     .history {
       list-style: none; padding: 0; margin: 0.25rem 0 0;
-      max-height: 220px; overflow: auto;
+      max-height: 320px; overflow: auto;
     }
     .history li {
       font-size: 0.75rem; color: var(--muted); padding: 0.42rem 0;
@@ -290,26 +290,39 @@
       return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }
 
-    /** English decimal point → Portuguese comma (2:30.495 → 2:30,495). */
     function ptComma(s) {
       if (s == null || s === '') return '';
       return String(s).replace(/(\d)\.(\d+)/g, '$1,$2');
     }
 
-    /** Format a race gap for display: "12,299 s" or "1 volta". */
     function formatGap(raw) {
       if (raw == null || raw === '') return { value: '—', unit: 'segundos' };
       let s = String(raw).trim();
       if (/volta|lap/i.test(s)) {
         return { value: ptComma(s.replace(/\blaps?\b/gi, 'voltas').replace(/\blap\b/gi, 'volta')), unit: '' };
       }
-      // strip trailing unit then re-add " s"
       s = s.replace(/\s*(s|sec|secs|seconds?)\.?$/i, '').trim();
       s = ptComma(s);
       if (!s) return { value: '—', unit: 'segundos' };
-      // mm:ss style already has time meaning
       if (/^\d+:\d/.test(s)) return { value: s, unit: 'min:s' };
       return { value: s + ' s', unit: 'segundos' };
+    }
+
+    /** Accept both overnight and older field names. */
+    function normalize(d) {
+      return Object.assign({}, d, {
+        overallPos: d.overallPos ?? d.overall_pos ?? d.pos,
+        classPos: d.classPos ?? d.class_pos,
+        className: d.className ?? d.class_name,
+        updatedLabel: d.updatedLabel ?? d.updated_label ?? d.updatedAt,
+        statusLabel: d.statusLabel ?? d.status_label,
+        lapsDown: d.lapsDown ?? d.laps_down,
+        lastPitDuration: d.lastPitDuration ?? d.last_pit_duration,
+        stintTime: d.stintTime ?? d.stint_time ?? d.stint,
+        flagLabel: d.flagLabel ?? d.flag_label,
+        pitWindow: d.pitWindow ?? d.pit_window,
+        remaining: d.remaining ?? d.timeRemaining
+      });
     }
 
     async function loadStatus() {
@@ -319,7 +332,7 @@
         try {
           const r = await fetch(base + bust, { cache: 'no-store' });
           if (!r.ok) throw new Error(r.status + ' ' + base);
-          data = await r.json();
+          data = normalize(await r.json());
           break;
         } catch (e) { lastErr = e; }
       }
@@ -383,7 +396,7 @@
         note.textContent = base ? (base + ' · Piloto: ' + d.driver) : ('Piloto: ' + d.driver);
       }
       document.getElementById('history').innerHTML =
-        (d.history || []).slice(0, 8).map(x => '<li>' + esc(ptComma(x)) + '</li>').join('');
+        (d.history || []).slice(0, 12).map(x => '<li>' + esc(ptComma(x)) + '</li>').join('');
     }
 
     async function tick() {
