@@ -10,7 +10,7 @@
   "classPos": 10,
   "laps": 100,
   "lapsDown": null,
-  "lastLap": "2:42.299",
+  "lastLap": "—",
   "bestLap": null,
   "status": "on_track",
   "statusLabel": "Em pista (OutLap após box)",
@@ -20,14 +20,14 @@
   "flag": "green",
   "flagLabel": "Verde (amarelo local T12)",
   "pitWindow": "open",
-  "remaining": "18:54:40",
+  "remaining": "~18:50",
   "ahead": { "car": 51, "team": "Scuderia Bandeiras I", "gap": "4:15.727" },
   "behind": { "car": 50, "team": "Scuderia Bandeiras II", "gap": "4:19.652" },
   "note": "Próxima box prevista ~22:00 — entrada do Pedro Garcia",
   "driver": null,
   "history": [
-    "21:12 OutLap após pit ~10:13 → P19 / P10",
-    "21:00 Na box (7.ª) · P17 / P8 · 106v",
+    "21:12 OutLap após pit ~10:13 → P19 / P10 Gentlemen · 100v · 7 pits",
+    "21:00 Na box (7.ª paragem) · P17 / P8",
     "20:47 Em pista · P18 / P9 · 94v · última 2:33.7"
   ]
 }
