@@ -3,8 +3,8 @@
   "team": "Moz Racing",
   "entry": "+258",
   "event": "Caterham Endurance 24H — Portimão",
-  "updatedAt": "2026-09-19T02:03:12+01:00",
-  "updatedLabel": "02:03 PT",
+  "updatedAt": "2026-09-19T02:06:47+01:00",
+  "updatedLabel": "02:06 PT",
   "overallPos": 19,
   "className": "Gentlemen",
   "classPos": 10,
@@ -15,12 +15,12 @@
   "status": "in_pit",
   "statusLabel": "Na box",
   "pits": 13,
-  "lastPitDuration": "7:06",
+  "lastPitDuration": "10:50",
   "stintTime": null,
-  "flag": "safety_car",
-  "flagLabel": "Safety car · PIT WINDOW OPEN",
+  "flag": "yellow",
+  "flagLabel": "Duplo amarelo T13 · PIT WINDOW OPEN",
   "pitWindow": "open",
-  "remaining": "13:56:47",
+  "remaining": "13:53:03",
   "ahead": {
     "car": 6,
     "team": "Zome",
@@ -37,7 +37,7 @@
     "gap": "−1 volta",
     "status": "in_pit"
   },
-  "note": "🏎️ Moz Racing #58 (+258) — 02:03 PT\nNa box · P19 geral / P10 Gentlemen\n183 voltas (−11 ao líder #9 Caterham Motorsport France)\nÚltima: 2:42,048 · box ~7:06 · 13 pits\nÀ frente: #6 Zome · +1 volta\nAtrás: #12 Floripa Racing Team · −1 volta\nSafety car · PIT WINDOW OPEN · restam 13:56\nOrg: DY T13 · SC · DT #10 (SC procedure)\nPedro ~03:00",
+  "note": "🏎️ Moz Racing #58 (+258) — 02:06 PT\nNa box · P19 geral / P10 Gentlemen\n183 voltas (−11 ao líder #9 Caterham Motorsport France)\nÚltima: 2:42,048 · box ~10:50 · 13 pits\nÀ frente: #6 Zome · +1 volta\nAtrás: #12 Floripa Racing Team · −1 volta\nDuplo amarelo T13 · PIT WINDOW OPEN · restam 13:53\nOrg: DY T13 · SC recente · DT #10 (SC procedure)\nPedro ~03:00 · ainda na 13.ª box",
   "driver": null,
   "teams": {
     "11": {
@@ -127,6 +127,7 @@
     }
   },
   "history": [
+    "02:06 Na box · P19 / P10 Gentlemen · 183v (−11) · última 2:42,048 · box ~10:50 · 13 pits · #6 Zome +1 volta · #12 Floripa Racing Team −1 volta · Duplo amarelo T13 · PIT WINDOW OPEN · restam 13:53 · Org: DY T13 · Pedro ~03:00 · ainda na 13.ª box (~+4 min vs 02:03)",
     "02:03 Na box · P19 / P10 Gentlemen · 183v (−11) · última 2:42,048 · box ~7:06 · 13 pits · #6 Zome +1 volta · #12 Floripa Racing Team −1 volta · Safety car · PIT WINDOW OPEN · restam 13:56 · Org: DY T13 · SC · DT #10 (SC procedure) · Pedro ~03:00 · −1 overall / −1 class vs 01:46 · 13.ª box",
     "01:46 Em pista · P18 / P9 Gentlemen · 179v (−9) · última 2:31,320 · stint 29:54 · 12 pits (último ~10:04) · #81 AZ Racing Team +1 volta · #6 Zome −1 volta · Verde · PIT WINDOW CLOSE · restam 14:13 · Org: DRIVE THROUGH #10 (SC procedure) · Pedro ~03:00 · +1 overall vs 01:23 · +1 class",
     "01:23 Em pista · P19 / P10 Gentlemen · 171v (−9) · última 2:32,389 · stint 6:46 · 12 pits (último ~10:04) · #81 AZ Racing Team +1 volta · #12 Floripa Racing Team −1 volta · Amarelo T1 · PIT WINDOW CLOSE · restam 14:36 · Pedro ~03:00 · 12.ª box (~10:04) vs 00:56 (−1 overall)",
@@ -137,7 +138,6 @@
     "00:05 Em pista (saiu 10.ª box) · P17 / P9 Gentlemen · 150v (−8) · última 2:25,754 · stint 15:43 · 10 pits (último ~03:12) · #84 Tracto Lena (box) +1v · #11 Wall Up|Coyote (box) −2v · Verde · LIGHTS ON · PIT WINDOW OPEN · restam 15:54 · Pedro ~03:00",
     "00:04 Em pista (saiu 10.ª box) · P17 / P9 Gentlemen · 150v (−8) · última 2:25,754 · stint 14:40 · 10 pits (último ~03:12) · #84 Tracto Lena (box) +5:34,026 · #11 Wall Up|Coyote (box) −2v · Verde · LIGHTS ON · PIT WINDOW OPEN · restam 15:55 · Pedro ~03:00",
     "23:47 NA BOX (10.ª · ~00:40) · P20 / P11 Gentlemen · 144v (−7) · última 2:59,652 · 10 pits · #81 AZ Racing +7,537 s · #6 Zome −3v · Verde · LIGHTS ON · PIT WINDOW CLOSE · restam 16:12 · Pedro ~03:00",
-    "23:30 Em pista · P19 / P10 Gentlemen · 137v (−7) · última 2:26,788 · stint 11:49 · 9 pits · #84 Tracto Lena +1:48,553 · #81 AZ Racing +38,253 s · restam 16:28",
-    "23:25 Em pista · P19 / P10 Gentlemen · 135v (−7) · última 2:34,059 · stint 6:39 · 9 pits · restam 16:34"
+    "23:30 Em pista · P19 / P10 Gentlemen · 137v (−7) · última 2:26,788 · stint 11:49 · 9 pits · #84 Tracto Lena +1:48,553 · #81 AZ Racing +38,253 s · restam 16:28"
   ]
 }
