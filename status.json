@@ -3,30 +3,30 @@
   "team": "Moz Racing",
   "entry": "+258",
   "event": "Caterham Endurance 24H — Portimão",
-  "updatedAt": "2026-09-19T03:17:00+01:00",
-  "updatedLabel": "03:17 PT",
+  "updatedAt": "2026-09-19T03:29:00+01:00",
+  "updatedLabel": "03:29 PT",
   "overallPos": 18,
   "className": "Gentlemen",
   "classPos": 9,
-  "laps": 206,
-  "lapsDown": 10,
-  "lastLap": "2:26.196",
+  "laps": 210,
+  "lapsDown": 11,
+  "lastLap": "2:25.910",
   "bestLap": null,
   "status": "on_track",
   "statusLabel": "Em pista",
   "pits": 14,
   "lastPitDuration": "10:02",
-  "stintTime": "17:18",
+  "stintTime": "28:39",
   "flag": "green",
   "flagLabel": "Verde",
   "pitWindow": "close",
-  "remaining": "12:41:58",
+  "remaining": "12:30:37",
   "ahead": {
     "car": 81,
     "team": "AZ Racing Team",
     "className": "Gentlemen",
     "classPos": 8,
-    "gap": "1:26,532 s",
+    "gap": "1:10,882 s (+1 volta)",
     "status": "on_track"
   },
   "behind": {
@@ -34,10 +34,10 @@
     "team": "Floripa Racing Team",
     "className": "Gentlemen",
     "classPos": 10,
-    "gap": "56,008 s (−1 volta)",
+    "gap": "43,500 s",
     "status": "on_track"
   },
-  "note": "🏎️ Moz Racing #58 (+258) — 03:17 PT\nEm pista (saiu 14.ª) · P18 geral / P9 Gentlemen\n206 voltas (−10 ao líder #57 Hirundo Motors)\nÚltima: 2:26,196 · stint ~17:18 · último pit ~10:02 · 14 pits\nÀ frente: #81 AZ Racing Team · 1:26,532 s\nAtrás: #12 Floripa Racing Team · 56,008 s (−1 volta)\nVerde · PIT WINDOW CLOSE · restam 12:41\nOrg: PIT WINDOW CLOSE 03:09 · STOP & GO #17 (03:04)\nPedro ~03:00 · stint ~17 min · +1 overall / +1 class vs 03:05",
+  "note": "🏎️ Moz Racing #58 (+258) — 03:29 PT\nEm pista · P18 geral / P9 Gentlemen\n210 voltas (−11 ao líder #57 Hirundo Motors)\nÚltima: 2:25,910 · stint ~28:39 · último pit ~10:02 · 14 pits\nÀ frente: #81 AZ Racing Team · 1:10,882 s (+1 volta)\nAtrás: #12 Floripa Racing Team · 43,500 s\nVerde · PIT WINDOW CLOSE · restam 12:30\nOrg: PIT WINDOW CLOSE 03:09 · STOP & GO #17 (03:04)\nPedro stint ~28 min · mesma posição vs 03:17 · #12 recuperou a volta; gap a #81 fechou",
   "driver": null,
   "teams": {
     "11": {
@@ -127,6 +127,7 @@
     }
   },
   "history": [
+    "03:29 Em pista · P18 / P9 Gentlemen · 210v (−11) · última 2:25,910 · stint ~28:39 · último pit ~10:02 · 14 pits · #81 AZ Racing Team 1:10,882 s (+1 volta) · #12 Floripa 43,500 s · Verde · PIT WINDOW CLOSE · restam 12:30 · Org: PIT WINDOW CLOSE 03:09 · STOP & GO #17 · Pedro stint ~28 min · mesma pos vs 03:17 · #12 mesma volta; gap #81 fechou",
     "03:17 Em pista · P18 / P9 Gentlemen · 206v (−10) · última 2:26,196 · stint ~17:18 · último pit ~10:02 · 14 pits · #81 AZ Racing Team 1:26,532 s · #12 Floripa 56,008 s (−1 volta) · Verde · PIT WINDOW CLOSE · restam 12:41 · Org: PIT WINDOW CLOSE 03:09 · STOP & GO #17 · Pedro ~03:00 · +1 overall / +1 class vs 03:05 · saiu 14.ª",
     "03:05 Em pista · P19 / P10 Gentlemen · 201v (−13) · última 2:27,993 · stint ~05:01 · último pit ~10:02 · 14 pits · #6 Zome 8:31,341 s (box) · #12 Floripa OutLap · Verde · PIT WINDOW OPEN · restam 12:54 · Org: STOP & GO #17 · Pedro ~03:00 · +1 overall / +1 class vs 03:02 · saiu 14.ª",
     "03:02 OutLap · P20 / P11 Gentlemen · 199v (−14) · última 2:34,346 · stint ~01:29 · último pit ~10:02 · 14 pits · #12 Floripa +1 volta (box) · #84 Tracto Lena −7 voltas · Verde · PIT WINDOW OPEN · restam 12:57 · Pedro ~03:00 · saiu 14.ª box (~10 min) · possível troca",
@@ -137,7 +138,6 @@
     "02:32 Em pista · P18 / P9 Gentlemen · 191v (−10) · última 2:30,394 · stint ~22:02 · 13 pits (último ~15:02) · #81 AZ Racing Team +1 volta · #12 Floripa 1:25,682 s · Verde · restam 13:26 · Pedro ~03:00 · #12 mesma volta vs 02:30",
     "02:30 Em pista · P18 / P9 Gentlemen · 191v (−9) · última 2:30,394 · stint ~19:54 · 13 pits (último ~15:02) · #81 AZ Racing Team +1 volta · #12 Floripa −1 volta · Verde · restam 13:28 · Pedro ~03:00 · −1 volta ao líder vs 02:20",
     "02:20 Em pista · P18 / P9 Gentlemen · 186v (−10) · última 2:29,281 · stint ~9:19 · 13 pits (último ~15:02) · #81 AZ Racing Team +1 volta · #12 Floripa 1:37,369 s · Verde · PIT WINDOW CLOSE · restam 13:39 · Org: PIT WINDOW CLOSE 02:09 · SC IN THIS LAP 02:07 · Pedro ~03:00",
-    "02:19 Em pista · P18 / P9 Gentlemen · 186v (−10) · última 2:29,281 · stint ~8:56 · 13 pits (último ~15:02) · #81 AZ Racing Team +1 volta · #12 Floripa Racing Team −1 volta · Verde · PIT WINDOW CLOSE · restam 13:40 · Pedro ~03:00 · atrás agora #12 (era #6)",
-    "02:17 Em pista · P18 / P9 Gentlemen · 185v (−9) · última 2:29,221 · stint ~5:08 · 13 pits (último ~15:02) · #81 AZ Racing Team +1 volta (box) · #6 Zome −1 volta (box) · Verde · PIT WINDOW CLOSE · restam 13:43 · Pedro ~03:00 · saiu 13.ª box · +1 overall / +1 class vs 02:06"
+    "02:19 Em pista · P18 / P9 Gentlemen · 186v (−10) · última 2:29,281 · stint ~8:56 · 13 pits (último ~15:02) · #81 AZ Racing Team +1 volta · #12 Floripa Racing Team −1 volta · Verde · PIT WINDOW CLOSE · restam 13:40 · Pedro ~03:00 · atrás agora #12 (era #6)"
   ]
 }
