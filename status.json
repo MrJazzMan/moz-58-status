@@ -3,8 +3,8 @@
   "team": "Moz Racing",
   "entry": "+258",
   "event": "Caterham Endurance 24H — Portimão",
-  "updatedAt": "2026-09-19T02:19:42+01:00",
-  "updatedLabel": "02:19 PT",
+  "updatedAt": "2026-09-19T02:20:05+01:00",
+  "updatedLabel": "02:20 PT",
   "overallPos": 18,
   "className": "Gentlemen",
   "classPos": 9,
@@ -16,11 +16,11 @@
   "statusLabel": "Em pista",
   "pits": 13,
   "lastPitDuration": "15:02",
-  "stintTime": "8:56",
+  "stintTime": "9:19",
   "flag": "green",
   "flagLabel": "Verde · PIT WINDOW CLOSE",
   "pitWindow": "close",
-  "remaining": "13:39:54",
+  "remaining": "13:39:31",
   "ahead": {
     "car": 81,
     "team": "AZ Racing Team",
@@ -34,99 +34,36 @@
     "team": "Floripa Racing Team",
     "className": "Gentlemen",
     "classPos": 10,
-    "gap": "−1 volta",
+    "gap": "1:37,369 s",
     "status": "on_track"
   },
-  "note": "🏎️ Moz Racing #58 (+258) — 02:19 PT\nEm pista · P18 geral / P9 Gentlemen\n186 voltas (−10 ao líder #57 Hirundo Motors)\nÚltima: 2:29,281 · stint ~8:56 · 13 pits (último ~15:02)\nÀ frente: #81 AZ Racing Team · +1 volta\nAtrás: #12 Floripa Racing Team · −1 volta\nVerde · PIT WINDOW CLOSE · restam 13:40\nOrg: PIT WINDOW CLOSE · SC recente · DY T13 · DT #10\nPedro ~03:00 · em pista pós-13.ª box · vizinho atrás agora #12 Floripa (era #6 Zome)",
+  "note": "🏎️ Moz Racing #58 (+258) — 02:20 PT\nEm pista · P18 geral / P9 Gentlemen\n186 voltas (−10 ao líder #57 Hirundo Motors)\nÚltima: 2:29,281 · stint ~9:19 · 13 pits (último ~15:02)\nÀ frente: #81 AZ Racing Team · +1 volta\nAtrás: #12 Floripa Racing Team · 1:37,369 s\nVerde · PIT WINDOW CLOSE · restam 13:39\nOrg: PIT WINDOW CLOSE (02:09) · SC IN THIS LAP (02:07) · DY T13\nPedro ~03:00 · em pista pós-13.ª box · #12 agora na mesma volta",
   "driver": null,
   "teams": {
-    "11": {
-      "name": "Wall Up | Coyote Racing",
-      "class": "Pro"
-    },
-    "77": {
-      "name": "Speisse | Superlemon",
-      "class": "Pro"
-    },
-    "14": {
-      "name": "Synergy Driver Performance",
-      "class": "Pro"
-    },
-    "9": {
-      "name": "Caterham Motorsport France",
-      "class": "Pro"
-    },
-    "74": {
-      "name": "Minho Jantes",
-      "class": "Pro"
-    },
-    "57": {
-      "name": "Hirundo Motors",
-      "class": "Pro"
-    },
-    "24": {
-      "name": "Gupe",
-      "class": "Gentlemen"
-    },
-    "27": {
-      "name": "Auto Restelo",
-      "class": "Pro"
-    },
-    "12": {
-      "name": "Floripa Racing Team",
-      "class": "Gentlemen"
-    },
-    "22": {
-      "name": "Noori Sushi ALM",
-      "class": "Gentlemen"
-    },
-    "8": {
-      "name": "Caterham Motorsport Brazil",
-      "class": "Gentlemen"
-    },
-    "10": {
-      "name": "Charm Nature",
-      "class": "Gentlemen"
-    },
-    "51": {
-      "name": "Scuderia Bandeiras I",
-      "class": "Gentlemen"
-    },
-    "17": {
-      "name": "AIA Racing School",
-      "class": "Pro"
-    },
-    "50": {
-      "name": "Scuderia Bandeiras II",
-      "class": "Gentlemen"
-    },
-    "84": {
-      "name": "Tracto Lena",
-      "class": "Gentlemen"
-    },
-    "58": {
-      "name": "Moz Racing",
-      "class": "Gentlemen",
-      "entry": "+258"
-    },
-    "7": {
-      "name": "Caterham Factory",
-      "class": "Pro"
-    },
-    "52": {
-      "name": "RXF",
-      "class": "Gentlemen"
-    },
-    "6": {
-      "name": "Zome",
-      "class": "Gentlemen"
-    },
-    "81": {
-      "name": "AZ Racing Team",
-      "class": "Gentlemen"
-    }
+    "11": { "name": "Wall Up | Coyote Racing", "class": "Pro" },
+    "77": { "name": "Speisse | Superlemon", "class": "Pro" },
+    "14": { "name": "Synergy Driver Performance", "class": "Pro" },
+    "9": { "name": "Caterham Motorsport France", "class": "Pro" },
+    "74": { "name": "Minho Jantes", "class": "Pro" },
+    "57": { "name": "Hirundo Motors", "class": "Pro" },
+    "24": { "name": "Gupe", "class": "Gentlemen" },
+    "27": { "name": "Auto Restelo", "class": "Pro" },
+    "12": { "name": "Floripa Racing Team", "class": "Gentlemen" },
+    "22": { "name": "Noori Sushi ALM", "class": "Gentlemen" },
+    "8": { "name": "Caterham Motorsport Brazil", "class": "Gentlemen" },
+    "10": { "name": "Charm Nature", "class": "Gentlemen" },
+    "51": { "name": "Scuderia Bandeiras I", "class": "Gentlemen" },
+    "17": { "name": "AIA Racing School", "class": "Pro" },
+    "50": { "name": "Scuderia Bandeiras II", "class": "Gentlemen" },
+    "84": { "name": "Tracto Lena", "class": "Gentlemen" },
+    "58": { "name": "Moz Racing", "class": "Gentlemen", "entry": "+258" },
+    "7": { "name": "Caterham Factory", "class": "Pro" },
+    "52": { "name": "RXF", "class": "Gentlemen" },
+    "6": { "name": "Zome", "class": "Gentlemen" },
+    "81": { "name": "AZ Racing Team", "class": "Gentlemen" }
   },
   "history": [
+    "02:20 Em pista · P18 / P9 Gentlemen · 186v (−10) · última 2:29,281 · stint ~9:19 · 13 pits (último ~15:02) · #81 AZ Racing Team +1 volta · #12 Floripa 1:37,369 s · Verde · PIT WINDOW CLOSE · restam 13:39 · Org: PIT WINDOW CLOSE 02:09 · SC IN THIS LAP 02:07 · Pedro ~03:00",
     "02:19 Em pista · P18 / P9 Gentlemen · 186v (−10) · última 2:29,281 · stint ~8:56 · 13 pits (último ~15:02) · #81 AZ Racing Team +1 volta · #12 Floripa Racing Team −1 volta · Verde · PIT WINDOW CLOSE · restam 13:40 · Pedro ~03:00 · atrás agora #12 (era #6)",
     "02:17 Em pista · P18 / P9 Gentlemen · 185v (−9) · última 2:29,221 · stint ~5:08 · 13 pits (último ~15:02) · #81 AZ Racing Team +1 volta (box) · #6 Zome −1 volta (box) · Verde · PIT WINDOW CLOSE · restam 13:43 · Pedro ~03:00 · saiu 13.ª box · +1 overall / +1 class vs 02:06",
     "02:06 Na box · P19 / P10 Gentlemen · 183v (−11) · última 2:42,048 · box ~10:50 · 13 pits · #6 Zome +1 volta · #12 Floripa Racing Team −1 volta · Duplo amarelo T13 · PIT WINDOW OPEN · restam 13:53 · Org: DY T13 · Pedro ~03:00 · ainda na 13.ª box (~+4 min vs 02:03)",
@@ -137,7 +74,6 @@
     "00:50 Em pista · P19 / P10 Gentlemen · 162v (−9) · última 2:23,092 · stint 26:19 · 11 pits (último ~15:03) · #81 AZ Racing +2:32,245 · #12 Floripa −1v · Verde · PIT WINDOW OPEN · restam 15:09 · Pedro ~03:00",
     "00:35 Em pista · P20 / P11 Gentlemen · 156v (−9) · última 2:49,977 · stint 10:36 · 11 pits (último ~15:03) · #81 AZ Racing +1v · #6 Zome −2v · Verde · LIGHTS ON · PIT WINDOW CLOSE · restam 15:25 · DY T4-5/T6 · Pedro ~03:00",
     "00:26 Em pista (saiu 11.ª box · out lap) · P20 / P11 Gentlemen · 152v (−10) · última 2:34,517 · stint 1:31 · 11 pits (último ~15:03) · #81 AZ Racing +1v · #6 Zome −2v · Verde · LIGHTS ON · PIT WINDOW CLOSE · restam 15:34 · Pedro ~03:00",
-    "00:05 Em pista (saiu 10.ª box) · P17 / P9 Gentlemen · 150v (−8) · última 2:25,754 · stint 15:43 · 10 pits (último ~03:12) · #84 Tracto Lena (box) +1v · #11 Wall Up|Coyote (box) −2v · Verde · LIGHTS ON · PIT WINDOW OPEN · restam 15:54 · Pedro ~03:00",
-    "00:04 Em pista (saiu 10.ª box) · P17 / P9 Gentlemen · 150v (−8) · última 2:25,754 · stint 14:40 · 10 pits (último ~03:12) · #84 Tracto Lena (box) +5:34,026 · #11 Wall Up|Coyote (box) −2v · Verde · LIGHTS ON · PIT WINDOW OPEN · restam 15:55 · Pedro ~03:00"
+    "00:05 Em pista (saiu 10.ª box) · P17 / P9 Gentlemen · 150v (−8) · última 2:25,754 · stint 15:43 · 10 pits (último ~03:12) · #84 Tracto Lena (box) +1v · #11 Wall Up|Coyote (box) −2v · Verde · LIGHTS ON · PIT WINDOW OPEN · restam 15:54 · Pedro ~03:00"
   ]
 }
