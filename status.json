@@ -3,30 +3,30 @@
   "team": "Moz Racing",
   "entry": "+258",
   "event": "Caterham Endurance 24H — Portimão",
-  "updatedAt": "2026-09-19T05:38:19+01:00",
-  "updatedLabel": "05:38 PT",
+  "updatedAt": "2026-09-19T05:45:34+01:00",
+  "updatedLabel": "05:45 PT",
   "overallPos": 18,
   "className": "Gentlemen",
   "classPos": 9,
-  "laps": 247,
-  "lapsDown": 11,
-  "lastLap": "2:23.796",
+  "laps": 250,
+  "lapsDown": 12,
+  "lastLap": "2:24.621",
   "bestLap": null,
   "status": "on_track",
   "statusLabel": "Em pista",
   "pits": 16,
   "lastPitDuration": "10:03",
-  "stintTime": "39:07",
+  "stintTime": "45:09",
   "flag": "green",
   "flagLabel": "Verde",
   "pitWindow": "close",
-  "remaining": "10:21:17",
+  "remaining": "10:14:02",
   "ahead": {
     "car": 12,
     "team": "Floripa Racing Team",
     "className": "Gentlemen",
     "classPos": 8,
-    "gap": "6,253 s",
+    "gap": "11,821 s",
     "status": "on_track"
   },
   "behind": {
@@ -34,10 +34,10 @@
     "team": "AZ Racing Team",
     "className": "Gentlemen",
     "classPos": 10,
-    "gap": "51,957 s",
+    "gap": "1:10,144",
     "status": "on_track"
   },
-  "note": "🏎️ Moz Racing #58 (+258) — 05:38 PT\nEm pista · P18 geral / P9 Gentlemen\n247 voltas (−11 ao líder #77 Speisse)\nÚltima: 2:23,796 · stint ~39:07 · último pit ~10:03 · 16 pits\nÀ frente: #12 Floripa · 6,253 s (pista)\nAtrás: #81 AZ · 51,957 s (pista)\nVerde · amarelo T7 · PIT WINDOW CLOSE · restam 10:21\nOrg: amarelo T7 · PIT WINDOW CLOSE · S&G/DT #84\n−1 overall / −1 class vs 05:26 · #12 passou · stint ~39:07",
+  "note": "🏎️ Moz Racing #58 (+258) — 05:45 PT\nEm pista · P18 geral / P9 Gentlemen\n250 voltas (−12 ao líder #77 Speisse)\nÚltima: 2:24,621 · stint ~45:09 · último pit ~10:03 · 16 pits\nÀ frente: #12 Floripa · 11,821 s (pista)\nAtrás: #81 AZ · 1:10,144 (pista)\nVerde · PIT WINDOW CLOSE · restam 10:14\nOrg: PIT WINDOW CLOSE (sem alerta novo #58)\nSem mudança grande vs 05:38 · ainda P18/P9 · −1 volta ao líder · #12 abriu para 11,821 s",
   "driver": null,
   "teams": {
     "11": {
@@ -127,6 +127,7 @@
     }
   },
   "history": [
+    "05:45 Em pista · P18 / P9 Gentlemen · 250v (−12) · última 2:24,621 · stint ~45:09 · último pit ~10:03 · 16 pits · #12 Floripa 11,821 s · #81 AZ 1:10,144 · Verde · PIT WINDOW CLOSE · restam 10:14 · sem mudança grande vs 05:38",
     "05:38 Em pista · P18 / P9 Gentlemen · 247v (−11) · última 2:23,796 · stint ~39:07 · último pit ~10:03 · 16 pits · #12 Floripa 6,253 s · #81 AZ 51,957 s · Verde · amarelo T7 · PIT WINDOW CLOSE · restam 10:21 · −1/−1 vs 05:26",
     "05:26 Em pista · P17 / P8 Gentlemen · 242v (−11) · última 2:24,574 · stint ~25:42 · último pit ~10:03 · 16 pits · #11 Wall Up 10:08,984 s (+4v Pro) · #12 Floripa 8,557 s · Verde · amarelo T7/T8 · PIT WINDOW CLOSE · restam 10:33 · +1/+1 vs 05:11",
     "05:11 Em pista · P18 / P9 Gentlemen · 236v (−14) · última 2:26,574 · stint ~10:47 · último pit ~10:03 · 16 pits · #81 AZ Racing 9:43,540 s (box) · #12 Floripa 14,253 s (pista) · Verde · PIT WINDOW CLOSE · restam 10:48 · Org: CLOSE · S&G #84 · saiu box · +2/+2 vs 05:00",
@@ -137,7 +138,6 @@
     "04:49 Em pista · P17 / P8 Gentlemen · 231v (−11) · última 2:25,191 · stint ~12:22 · último pit ~30:02 · 15 pits · #11 Wall Up +4 voltas · #81 AZ Racing Te 2,906 s · Verde · PIT WINDOW CLOSE · restam 11:10 · Org: S&G #84 · recuperou P17/P8 · passou #81",
     "04:44 Em pista · P18 / P9 Gentlemen · 229v (−11) · última 2:25,702 · stint ~05:49 · último pit ~30:02 · 15 pits · #81 AZ Racing Team 3,066 s (pista) · #12 Floripa 26,000 s (pista) · Verde · PIT WINDOW CLOSE · restam 11:15 · Org: amarelo T6 limpo · em pista após OutLap · −1 overall / −1 class vs 04:39 · #81 à frente",
     "04:39 Saiu da box (OutLap) · P17 / P8 Gentlemen · 227v (−11) · última 2:33,276 · último pit ~30:02 · stint 00:35 · 15 pits · #11 Wall Up 1:28,299 s (Pro) · #81 AZ Racing 29:49,027 s · Verde · PIT WINDOW CLOSE · restam 11:20 · Org: CLOSE ~04:09 · amarelo T6 limpo · pit longo ~30:02 · saiu",
-    "04:35 Na box · P17 / P8 Gentlemen · 227v (−10) · última 2:33,276 · box ~26:35 · 15 pits · #8 Caterham Motorsport Brazil 11:28,358 s (pista) · #12 Floripa 25,119 s (box) · Verde · PIT WINDOW CLOSE · restam 11:24 · Org: CLOSE ~04:09 · pit longo ~26:35 · P17/P8 estável · #77 líder também box",
-    "04:34 Na box · P17 / P8 Gentlemen · 227v (−10) · última 2:33,276 · box ~26:26 · 15 pits · #8 Caterham Motorsport Brazil 11:28,358 s (pista) · #12 Floripa 25,119 s (box) · Verde · PIT WINDOW CLOSE · restam 11:24 · Org: CLOSE ~04:09 · pit longo ~26:26 · #8 saiu · P17/P8 estável"
+    "04:35 Na box · P17 / P8 Gentlemen · 227v (−10) · última 2:33,276 · box ~26:35 · 15 pits · #8 Caterham Motorsport Brazil 11:28,358 s (pista) · #12 Floripa 25,119 s (box) · Verde · PIT WINDOW CLOSE · restam 11:24 · Org: CLOSE ~04:09 · pit longo ~26:35 · P17/P8 estável · #77 líder também box"
   ]
 }
